@@ -1,9 +1,11 @@
 package com.example.quizappcontrole;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -26,6 +28,7 @@ import java.util.ArrayList;
 public class Score extends AppCompatActivity {
    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,22 +41,14 @@ public class Score extends AppCompatActivity {
         if (extras != null) {
             int scorevalue = extras.getInt("score");
             TextView score = findViewById(R.id.score) ;
-            score.setText("Score : "+scorevalue);
-            ProgressBar progressBar = findViewById(R.id.progress_bar) ;
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-
-
-                        progressBar.setProgress(scorevalue/3);
-
-                }
-            }, scorevalue*50);
-
-
-
-
+            score.setText("Score : "+scorevalue+"/3");
+           ProgressBar progressBar = findViewById(R.id.progressbar) ;
+float  sc = ((float) (scorevalue/3.0))*100 ;
+ System.out.println("score : "+ (int) sc  +" score value : " + scorevalue );
+           progressBar.setProgress((int) sc);
+           progressBar.invalidate();
+           TextView progresstext= findViewById(R.id.progressiontext) ;
+           progresstext.setText((int) sc+" %");
             //The key argument here must match that used in the other activity
         }
         Button logout = (Button) findViewById(R.id.logout) ;
