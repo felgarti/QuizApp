@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/ButtonBackground.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/buttonbackground.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/editTextBackground.xml" value="0.1" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/edittextbackground.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/edittextbackgroundchecked.xml" value="0.1" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/ic_baseline_mail_24.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/passwordicon.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_questions.xml" value="0.1" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_score.xml" value="0.22" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

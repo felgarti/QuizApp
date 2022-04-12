@@ -1,0 +1,63 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/logo_foreground" />
+
+    <EditText
+        android:id="@+id/name"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:textSize="22dp"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:hint=" Full name"
+        android:background="@drawable/edittextbackground"
+        android:layout_marginTop="70dp"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_baseline_mail_24"
+        android:textSize="22dp"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:hint=" Email"
+        android:background="@drawable/edittextbackground"
+
+        />
+    <EditText
+android:id="@+id/password"
+        android:layout_gravity="center"
+        android:layout_width="330dp"
+        android:layout_height="45dp"
+        android:hint=" Password"
+        android:textSize="22dp"
+        android:background="@drawable/edittextbackground"
+        android:drawableLeft="@drawable/passwordicon"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:id="@+id/signupBtn"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonbackground"
+        android:text="Sign up"
+        android:textSize="28dp"
+
+        />
+
+
+
+
+</LinearLayout>

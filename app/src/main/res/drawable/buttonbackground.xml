@@ -1,0 +1,9 @@
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="MissingDefaultResource">
+    <solid
+
+        android:color="#E15705EC"
+        />
+    <corners android:radius="30dp"/>
+</shape>
