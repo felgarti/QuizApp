@@ -10,12 +10,14 @@
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/editTextBackground.xml" value="0.1" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/edittextbackground.xml" value="0.2115" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/edittextbackgroundchecked.xml" value="0.1" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/ic_baseline_mail_24.xml" value="0.2115" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2115" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/drawable/passwordicon.xml" value="0.2115" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_localisation.xml" value="0.175" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_questions.xml" value="0.1" />
-        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_score.xml" value="0.22" />
+        <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_score.xml" value="0.1" />
         <entry key="..\:/Users/elgar/AndroidStudioProjects/QuizAppControle/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
       </map>
     </option>

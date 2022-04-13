@@ -51,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 Login(email.getText().toString().trim(),password.getText().toString().trim());
 
             } });
+        Button getlocbtn = findViewById(R.id.getLoc) ;
+        getlocbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this , localisation.class );
+                startActivity(i);
+            }
+        });
     }
     public void Login(String email , String password)
     {
