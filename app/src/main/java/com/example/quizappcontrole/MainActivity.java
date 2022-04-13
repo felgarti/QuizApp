@@ -51,14 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 Login(email.getText().toString().trim(),password.getText().toString().trim());
 
             } });
-        Button getlocbtn = findViewById(R.id.getLoc) ;
-        getlocbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this , localisation.class );
-                startActivity(i);
-            }
-        });
+
     }
     public void Login(String email , String password)
     {
@@ -69,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "login:success");
 
-                    Intent i = new Intent(MainActivity.this , questions.class) ;
+                    Intent i = new Intent(MainActivity.this , localisation.class) ;
                     startActivity(i);
                 } else {
                     // If sign in fails, display a message to the user.

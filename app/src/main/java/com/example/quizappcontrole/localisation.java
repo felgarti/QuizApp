@@ -1,6 +1,8 @@
 package com.example.quizappcontrole;
 
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,8 @@ import android.os.Build;
 import android.os.Bundle;
 
 import android.os.Looper;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,15 +39,25 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 
 public class localisation extends AppCompatActivity {
-
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
+  FirebaseAuth mAuth=FirebaseAuth.getInstance();
     private TextView AddressText;
     private Button LocationButton;
     private LocationRequest locationRequest;
@@ -55,20 +69,14 @@ public class localisation extends AppCompatActivity {
         setContentView(R.layout.activity_localisation);
 
         AddressText = findViewById(R.id.addressText);
-        LocationButton = findViewById(R.id.locationButton);
+
 
         locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(5000);
-        locationRequest.setFastestInterval(2000);
+        locationRequest.setInterval(6000);
+        locationRequest.setFastestInterval(3000);
+        getCurrentLocation();
 
-        LocationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                getCurrentLocation();
-            }
-        });
 
 
     }
@@ -137,11 +145,45 @@ public class localisation extends AppCompatActivity {
                                         } catch (IOException e) {
                                             e.printStackTrace();
                                         }
-                                        String cityName = addresses.get(0).getAddressLine(0);
+                                        String address = addresses.get(0).getAddressLine(0);
 
                                         TextView ad = findViewById(R.id.adressexacte) ;
-                                        ad.setText("  you are here : \n"+cityName);
+                                        ad.setText("  you are here : \n"+address);
+                                        //------------------------ add session to firestore
 
+                                        Map<String, Object> session = new HashMap<>();
+                                        session.put("email", mAuth.getCurrentUser().getEmail().toString());
+                                        session.put("latitude", latitude);
+                                        session.put("longitude", longitude);
+                                        session.put("timestamp", Timestamp.now());
+                                        session.put("localisation", address);
+                                        CollectionReference colRef = db.collection("sessions");
+                                        db.collection("sessions").document(mAuth.getCurrentUser().getEmail().toString()+Timestamp.now())
+                                                .set(session)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.w(TAG, "Error writing document", e);
+                                                    }
+                                                });
+
+
+
+
+
+
+                                        //----------------------------------------
+                                        Toast.makeText(localisation.this, address,
+                                                Toast.LENGTH_SHORT).show();
+
+                                        Intent i = new Intent(localisation.this , questions.class) ;
+startActivity(i);
                                     }
                                 }
                             }, Looper.getMainLooper());

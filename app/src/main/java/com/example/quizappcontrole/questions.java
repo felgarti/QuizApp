@@ -117,16 +117,7 @@ public class questions extends AppCompatActivity {
 
             }
         });
-        Button logout = (Button) findViewById(R.id.logout) ;
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuth.signOut();
-                Intent i = new Intent(questions.this, MainActivity.class);
-                startActivity(i);
 
-            }
-        });
 
     }
 
